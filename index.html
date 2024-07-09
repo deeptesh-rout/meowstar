@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Meowatar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="topbar">
+	<i class="fa-solid fa-paw"></i>
+	<span class="logo-text">MEOWATAR</span>
+</div>
+<form class="container">
+	<!-- Eyes -->
+	<input type="radio" name="eyes" id="eyes_round" class="hidden" checked />
+	<input type="radio" name="eyes" id="eyes_droopy" class="hidden" />
+	<input type="radio" name="eyes" id="eyes_border" class="hidden" />
+	<!-- Mouth -->
+	<input type="radio" name="mouth" id="mouth_w" class="hidden" checked />
+	<input type="radio" name="mouth" id="mouth_inverted-y" class="hidden" />
+	<input type="radio" name="mouth" id="mouth_smile" class="hidden" />
+	<input type="radio" name="mouth" id="mouth_triangle" class="hidden" />
+	<!-- Hat -->
+	<input type="radio" name="hat" id="hat_none" class="hidden" checked />
+	<input type="radio" name="hat" id="hat_top-hat" class="hidden" />
+	<input type="radio" name="hat" id="hat_ribbon" class="hidden" />
+	<!-- Dress -->
+<!-- 	<input type="radio" name="dress" id="dress_none" class="hidden" checked />
+	<input type="radio" name="dress" id="dress_tie" class="hidden" checked />
+	<input type="radio" name="dress" id="dress_skirt" class="hidden" checked /> -->
+	<!-- Fur -->
+	<input type="radio" name="fur" id="fur_white" class="hidden" checked />
+	<input type="radio" name="fur" id="fur_orange" class="hidden" />
+	<input type="radio" name="fur" id="fur_brown" class="hidden" />
+	<input type="radio" name="fur" id="fur_gray" class="hidden" />
+	<input type="radio" name="fur" id="fur_blue" class="hidden" />
+	
+	<div class="avatar-container">
+		<div class="avatar-frame">
+			<div class="avatar">
+				<div class="body">
+					<div class="arm left"></div>
+					<div class="arm right"></div>
+				</div>
+				<div class="head">
+					<div class="ear left"></div>
+					<div class="ear right"></div>
+					<div class="eye left"></div>
+					<div class="eye right"></div>
+					<div class="nose"></div>
+					<div class="mouth"></div>
+					<div class="whisker top left"></div>
+					<div class="whisker middle left"></div>
+					<div class="whisker bottom left"></div>
+					<div class="whisker top right"></div>
+					<div class="whisker middle right"></div>
+					<div class="whisker bottom right"></div>
+					<div class="hat"></div>
+				</div>
+				<div class="leg left"></div>
+				<div class="leg right"></div>
+			</div>
+		</div>
+		<div class="buttons-container">
+			<button type="button" id="btn_save" title="Ain't working lol">
+				<i class="fa-regular fa-floppy-disk"></i>
+				Save changes
+			</button>
+			<button type="reset" id="btn_discard" title="No JavaScript so, no confirmation">
+				<i class="fa-solid fa-xmark"></i>
+				Discard changes
+			</button>
+		</div>
+	</div>
+	<div class="selection-container">
+		<div class="selection-list">
+			<a href="#eyes_selection" class="selection-link">
+				<i class="fa-regular fa-eye"></i>
+				<span class="selection-link-text">Eyes</span>
+			</a>
+			<a href="#mouth_selection" class="selection-link">
+				<i class="fa-regular fa-face-smile"></i>
+				<span class="selection-link-text">Mouth</span>
+			</a>
+			<a href="#hat_selection" class="selection-link">
+				<i class="fa-solid fa-hat-cowboy"></i>
+				<span class="selection-link-text">Hat</span>
+			</a>
+<!-- 			<a href="#dress_selection" class="selection-link">
+				<i class="fa-solid fa-shirt"></i>
+				<span class="selection-link-text">Dress</span>
+			</a> -->
+			<a href="#fur_selection" class="selection-link">
+				<i class="fa-solid fa-circle"></i>
+				<span class="selection-link-text">Fur</span>
+			</a>
+		</div>
+		<div class="selections">
+			<div id="eyes_selection" class="selection">
+				<label for="eyes_round" class="selection-item">
+					<span class="eyes round"></span>
+				</label>
+				<label for="eyes_droopy" class="selection-item">
+					<span class="eyes droopy"></span>
+				</label>
+				<label for="eyes_border" class="selection-item">
+					<span class="eyes border"></span>
+				</label>
+			</div>
+			<div id="mouth_selection" class="selection">
+				<label for="mouth_w" class="selection-item">
+					<span class="selection-mouth w"></span>
+				</label>
+				<label for="mouth_inverted-y" class="selection-item">
+					<span class="selection-mouth inverted-y"></span>
+				</label>
+				<label for="mouth_smile" class="selection-item">
+					<span class="selection-mouth smile"></span>
+				</label>
+				<label for="mouth_triangle" class="selection-item">
+					<span class="selection-mouth triangle"></span>
+				</label>
+			</div>
+			<div id="hat_selection" class="selection">
+				<label for="hat_none" class="selection-item">
+					<span class="selection-hat none"></span>
+				</label>
+				<label for="hat_top-hat" class="selection-item">
+					<span class="selection-hat top-hat"></span>
+				</label>
+				<label for="hat_ribbon" class="selection-item">
+					<span class="selection-hat ribbon"></span>
+				</label>
+			</div>
+<!-- 			<div id="dress_selection" class="selection">
+				<label for="dress_none" class="selection-item">
+					<span class="selection-dress none"></span>
+				</label>
+			</div> -->
+			<div id="fur_selection" class="selection">
+				<label for="fur_white" class="selection-item">
+					<span class="fur white"></span>
+				</label>
+				<label for="fur_orange" class="selection-item">
+					<span class="fur orange"></span>
+				</label>
+				<label for="fur_brown" class="selection-item">
+					<span class="fur brown"></span>
+				</label>
+				<label for="fur_gray" class="selection-item">
+					<span class="fur gray"></span>
+				</label>
+				<label for="fur_blue" class="selection-item">
+					<span class="fur blue"></span>
+				</label>
+			</div>
+		</div>
+	</div>
+</form>
+<!-- partial -->
+  
+</body>
+</html>

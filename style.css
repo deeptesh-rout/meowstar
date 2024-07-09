@@ -1,0 +1,886 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+:root, button {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2f2f2f;
+}
+
+.topbar {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #0a0a0a;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logo-text {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-frame {
+  background-color: #2f2f2f;
+  width: 100%;
+  height: 24rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 1.5rem 3.75rem rgba(0, 0, 0, 0.75) inset;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.head {
+  width: 10rem;
+  height: 10rem;
+  order: 1;
+  position: relative;
+  border-radius: 99999px;
+  -webkit-animation: idle 512ms ease-out infinite;
+          animation: idle 512ms ease-out infinite;
+}
+
+.ear {
+  width: 0;
+  height: 0;
+  border-bottom: solid 4.5rem;
+  border-left: solid 2.25rem transparent;
+  border-right: solid 2.25rem transparent;
+  position: absolute;
+  top: -2rem;
+}
+.ear.left {
+  left: -0.9rem;
+  transform: rotate(-26deg);
+}
+.ear.right {
+  right: -0.9rem;
+  transform: rotate(26deg);
+}
+
+.eye {
+  position: absolute;
+  top: 4.25rem;
+}
+.eye.left {
+  left: 2.5rem;
+  transform: translateX(-50%);
+}
+.eye.right {
+  right: 2.5rem;
+  transform: translateX(50%);
+}
+
+.nose {
+  background-color: #000000;
+  width: 1.25rem;
+  height: 0.75rem;
+  position: absolute;
+  top: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 50% 50%/25% 25% 75% 75%;
+}
+
+.mouth {
+  position: absolute;
+  top: 7rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.whisker {
+  background-color: #000000;
+  width: 3.5rem;
+  height: 0.2rem;
+  position: absolute;
+}
+.whisker.top {
+  top: 5.25rem;
+}
+.whisker.top.left {
+  transform: rotate(10deg);
+}
+.whisker.top.right {
+  transform: rotate(-10deg);
+}
+.whisker.middle {
+  top: 6.5rem;
+}
+.whisker.middle.left {
+  transform: rotate(3deg);
+}
+.whisker.middle.right {
+  transform: rotate(-3deg);
+}
+.whisker.bottom {
+  top: 7.75rem;
+}
+.whisker.bottom.left {
+  transform: rotate(-5deg);
+}
+.whisker.bottom.right {
+  transform: rotate(5deg);
+}
+.whisker.left {
+  left: -1.5rem;
+}
+.whisker.right {
+  right: -1.5rem;
+}
+
+.hat {
+  position: absolute;
+}
+
+.body {
+  width: 4rem;
+  height: 5rem;
+  margin-top: -1rem;
+  order: 2;
+  position: relative;
+  border-radius: 99999px;
+  -webkit-animation: idle 512ms ease-out infinite;
+          animation: idle 512ms ease-out infinite;
+}
+
+.arm {
+  width: 1.5rem;
+  height: 2.25rem;
+  position: absolute;
+  top: 1.1rem;
+  border-radius: 0 0 99999px 99999px;
+}
+.arm.left {
+  left: 0.2rem;
+  transform-origin: top left;
+  transform: rotate(65deg);
+  -webkit-animation: arm-left-idle 512ms ease-out infinite;
+          animation: arm-left-idle 512ms ease-out infinite;
+}
+.arm.right {
+  right: 0.2rem;
+  transform-origin: top right;
+  transform: rotate(-65deg);
+  -webkit-animation: arm-right-idle 512ms ease-out infinite;
+          animation: arm-right-idle 512ms ease-out infinite;
+}
+
+.leg {
+  width: 2.15rem;
+  height: 1.25rem;
+  position: absolute;
+  top: calc(100% + 0.05rem);
+  border-radius: 99999px 99999px 0 0;
+}
+.leg.left {
+  left: 2.25rem;
+}
+.leg.right {
+  right: 2.25rem;
+}
+
+.buttons-container {
+  width: 100%;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.buttons-container > button {
+  padding: 1rem 2rem;
+  border: 0;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 72ms ease-out;
+}
+.buttons-container > button:last-child {
+  margin-bottom: 0;
+}
+
+#btn_save {
+  background-color: #fed235;
+}
+#btn_save:hover {
+  background-color: #fec702;
+}
+#btn_save:active {
+  background-color: #cca001;
+}
+
+#btn_discard {
+  background-color: #fafafa;
+}
+#btn_discard:hover {
+  background-color: #e1e1e1;
+}
+#btn_discard:active {
+  background-color: #c7c7c7;
+}
+
+.selection-container {
+  width: 100%;
+}
+
+.selection-list {
+  display: flex;
+}
+
+.selection-link {
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  transition: color 72ms ease-out, background-color 72ms ease-out;
+  cursor: pointer;
+}
+.selection-link:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.selection-link-text {
+  display: none;
+  margin-top: 0.5rem;
+}
+
+.selections {
+  position: relative;
+}
+
+.selection {
+  width: 100%;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.75rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.selection:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.selection-item {
+  background-color: #272727;
+  height: 7.5rem;
+  border-radius: 0.75rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 72ms ease-out;
+  cursor: pointer;
+}
+.selection-item:hover {
+  background-color: #1a1a1a;
+}
+.selection-item:active {
+  background-color: #0e0e0e;
+}
+
+.eyes.round {
+  background-color: #000000;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 99999px;
+}
+.eyes.droopy {
+  background-color: #ffffff;
+  width: 2rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 0 0 99999px 99999px;
+}
+.eyes.droopy::before {
+  content: "";
+  background-color: #000000;
+  width: 1.1rem;
+  height: 0.6rem;
+  display: block;
+  border-radius: 0 0 99999px 99999px;
+}
+.eyes.border {
+  background-color: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: solid 0.15rem #000000;
+  border-radius: 99999px;
+}
+
+.selection-mouth.w {
+  display: flex;
+}
+.selection-mouth.w::before, .selection-mouth.w::after {
+  content: "";
+  width: 1.25rem;
+  height: 0.5rem;
+  border: solid 0.2rem #000000;
+  border-top: none;
+  display: block;
+  border-radius: 0% 0% 50% 50%/0% 0% 100% 100%;
+}
+.selection-mouth.w::before {
+  transform: translateX(0.1rem) skewY(-10deg);
+}
+.selection-mouth.w::after {
+  transform: translateX(-0.1rem) skewY(10deg);
+}
+.selection-mouth.inverted-y {
+  background-color: #000000;
+  width: 0.2rem;
+  height: 1rem;
+  position: relative;
+}
+.selection-mouth.inverted-y::before {
+  content: "";
+  width: 0.7071067812rem;
+  height: 0.7071067812rem;
+  border: solid 0.2rem #000000;
+  border-bottom: none;
+  border-right: none;
+  display: block;
+  position: absolute;
+  top: calc(100% - 0.2rem);
+  left: calc(50% - 0.3535533906rem);
+  transform-origin: 0.1rem;
+  transform: rotate(45deg);
+}
+.selection-mouth.smile {
+  width: 2.5rem;
+  height: 0.75rem;
+  border: solid 0.2rem #000000;
+  border-top: none;
+  border-radius: 0% 0% 50% 50%/0% 0% 100% 100%;
+}
+.selection-mouth.triangle {
+  width: 0;
+  height: 0;
+  border-bottom: solid 1.25rem #000000;
+  border-left: solid 0.875rem transparent;
+  border-right: solid 0.875rem transparent;
+}
+
+.selection-hat.none {
+  width: 4rem;
+  height: 4rem;
+  border: solid 0.5rem #ffffff;
+  display: flex;
+  justify-content: center;
+  border-radius: 99999px;
+}
+.selection-hat.none::before {
+  content: "";
+  background-color: #ffffff;
+  width: 0.5rem;
+  height: 100%;
+  display: block;
+  transform: rotate(45deg);
+}
+.selection-hat.top-hat {
+  background-color: #000000;
+  width: 8rem;
+  height: 8rem;
+  position: relative;
+  transform: scale(0.5);
+}
+.selection-hat.top-hat::before, .selection-hat.top-hat::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.selection-hat.top-hat::before {
+  background-color: #c92424;
+  width: 100%;
+  height: 1rem;
+  position: absolute;
+  left: 0;
+  bottom: 1rem;
+}
+.selection-hat.top-hat::after {
+  background-color: #000000;
+  width: 12rem;
+  height: 1rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.selection-hat.ribbon {
+  transform: rotate(25deg);
+  position: relative;
+}
+.selection-hat.ribbon::before, .selection-hat.ribbon::after {
+  content: "";
+  width: 0;
+  height: 0.75rem;
+  position: absolute;
+}
+.selection-hat.ribbon::before {
+  border-top: solid 0.875rem transparent;
+  border-bottom: solid 0.875rem transparent;
+  border-left: solid 1.75rem #de6291;
+  right: 0;
+}
+.selection-hat.ribbon::after {
+  border-top: solid 0.875rem transparent;
+  border-bottom: solid 0.875rem transparent;
+  border-right: solid 1.75rem #de6291;
+  left: 0;
+}
+
+.fur {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 99999px;
+}
+
+.container:has(#eyes_selection:target) a[href="#eyes_selection"] {
+  color: #000000;
+  background-color: #fed235;
+}
+
+.container:has(#mouth_selection:target) a[href="#mouth_selection"] {
+  color: #000000;
+  background-color: #fed235;
+}
+
+.container:has(#hat_selection:target) a[href="#hat_selection"] {
+  color: #000000;
+  background-color: #fed235;
+}
+
+.container:has(#dress_selection:target) a[href="#dress_selection"] {
+  color: #000000;
+  background-color: #fed235;
+}
+
+.container:has(#fur_selection:target) a[href="#fur_selection"] {
+  color: #000000;
+  background-color: #fed235;
+}
+
+.container:has(#eyes_round:checked) label[for=eyes_round] {
+  background-color: #fed235;
+}
+.container:has(#eyes_round:checked) .eye {
+  background-color: #000000;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 99999px;
+}
+
+.container:has(#eyes_droopy:checked) label[for=eyes_droopy] {
+  background-color: #fed235;
+}
+.container:has(#eyes_droopy:checked) .eye {
+  background-color: #ffffff;
+  width: 2rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 0 0 99999px 99999px;
+}
+.container:has(#eyes_droopy:checked) .eye::before {
+  content: "";
+  background-color: #000000;
+  width: 1.1rem;
+  height: 0.6rem;
+  display: block;
+  border-radius: 0 0 99999px 99999px;
+}
+
+.container:has(#eyes_border:checked) label[for=eyes_border] {
+  background-color: #fed235;
+}
+.container:has(#eyes_border:checked) .eye {
+  background-color: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: solid 0.15rem #000000;
+  border-radius: 99999px;
+}
+
+.container:has(#mouth_w:checked) label[for=mouth_w] {
+  background-color: #fed235;
+}
+.container:has(#mouth_w:checked) .avatar > .head > .mouth {
+  display: flex;
+}
+.container:has(#mouth_w:checked) .avatar > .head > .mouth::before, .container:has(#mouth_w:checked) .avatar > .head > .mouth::after {
+  content: "";
+  width: 1.25rem;
+  height: 0.5rem;
+  border: solid 0.2rem #000000;
+  border-top: none;
+  display: block;
+  border-radius: 0% 0% 50% 50%/0% 0% 100% 100%;
+}
+.container:has(#mouth_w:checked) .avatar > .head > .mouth::before {
+  transform: translateX(0.1rem) skewY(-10deg);
+}
+.container:has(#mouth_w:checked) .avatar > .head > .mouth::after {
+  transform: translateX(-0.1rem) skewY(10deg);
+}
+
+.container:has(#mouth_inverted-y:checked) label[for=mouth_inverted-y] {
+  background-color: #fed235;
+}
+.container:has(#mouth_inverted-y:checked) .avatar > .head > .mouth {
+  background-color: #000000;
+  width: 0.2rem;
+  height: 1rem;
+  position: relative;
+}
+.container:has(#mouth_inverted-y:checked) .avatar > .head > .mouth::before {
+  content: "";
+  width: 0.7071067812rem;
+  height: 0.7071067812rem;
+  border: solid 0.2rem #000000;
+  border-bottom: none;
+  border-right: none;
+  display: block;
+  position: absolute;
+  top: calc(100% - 0.2rem);
+  left: calc(50% - 0.3535533906rem);
+  transform-origin: 0.1rem;
+  transform: rotate(45deg);
+}
+
+.container:has(#mouth_smile:checked) label[for=mouth_smile] {
+  background-color: #fed235;
+}
+.container:has(#mouth_smile:checked) .avatar > .head > .mouth {
+  width: 2.5rem;
+  height: 0.75rem;
+  border: solid 0.2rem #000000;
+  border-top: none;
+  border-radius: 0% 0% 50% 50%/0% 0% 100% 100%;
+}
+
+.container:has(#mouth_triangle:checked) label[for=mouth_triangle] {
+  background-color: #fed235;
+}
+.container:has(#mouth_triangle:checked) .avatar > .head > .mouth {
+  width: 0;
+  height: 0;
+  border-bottom: solid 1.25rem #000000;
+  border-left: solid 0.875rem transparent;
+  border-right: solid 0.875rem transparent;
+}
+
+.container:has(#hat_none:checked) label[for=hat_none] {
+  background-color: #fed235;
+}
+.container:has(#hat_top-hat:checked) label[for=hat_top-hat] {
+  background-color: #fed235;
+}
+.container:has(#hat_top-hat:checked) .hat {
+  background-color: #000000;
+  width: 8rem;
+  height: 8rem;
+  top: -4.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.container:has(#hat_top-hat:checked) .hat::before, .container:has(#hat_top-hat:checked) .hat::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.container:has(#hat_top-hat:checked) .hat::before {
+  background-color: #c92424;
+  width: 100%;
+  height: 1rem;
+  position: absolute;
+  left: 0;
+  bottom: 1rem;
+}
+.container:has(#hat_top-hat:checked) .hat::after {
+  background-color: #000000;
+  width: 12rem;
+  height: 1rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container:has(#hat_ribbon:checked) label[for=hat_ribbon] {
+  background-color: #fed235;
+}
+.container:has(#hat_ribbon:checked) .hat {
+  transform: rotate(25deg);
+  top: 0.75rem;
+  left: 8.5rem;
+}
+.container:has(#hat_ribbon:checked) .hat::before, .container:has(#hat_ribbon:checked) .hat::after {
+  content: "";
+  width: 0;
+  height: 0.75rem;
+  position: absolute;
+}
+.container:has(#hat_ribbon:checked) .hat::before {
+  border-top: solid 0.875rem transparent;
+  border-bottom: solid 0.875rem transparent;
+  border-left: solid 1.75rem #de6291;
+  right: 0;
+}
+.container:has(#hat_ribbon:checked) .hat::after {
+  border-top: solid 0.875rem transparent;
+  border-bottom: solid 0.875rem transparent;
+  border-right: solid 1.75rem #de6291;
+  left: 0;
+}
+
+.container:has(#fur_white:checked) label[for=fur_white] {
+  background-color: #fed235;
+}
+.container:has(#fur_white:checked) .avatar > div:is(.head, .body, .leg) {
+  background-color: #ededed;
+}
+.container:has(#fur_white:checked) .avatar > div:is(.head, .body, .leg) > div:is(.arm) {
+  background-color: #ededed;
+}
+.container:has(#fur_white:checked) .avatar > .head > .ear {
+  border-bottom-color: #ededed;
+}
+
+.fur.white {
+  background-color: #ededed;
+}
+
+.container:has(#fur_orange:checked) label[for=fur_orange] {
+  background-color: #fed235;
+}
+.container:has(#fur_orange:checked) .avatar > div:is(.head, .body, .leg) {
+  background-color: #e8813c;
+}
+.container:has(#fur_orange:checked) .avatar > div:is(.head, .body, .leg) > div:is(.arm) {
+  background-color: #e8813c;
+}
+.container:has(#fur_orange:checked) .avatar > .head > .ear {
+  border-bottom-color: #e8813c;
+}
+
+.fur.orange {
+  background-color: #e8813c;
+}
+
+.container:has(#fur_brown:checked) label[for=fur_brown] {
+  background-color: #fed235;
+}
+.container:has(#fur_brown:checked) .avatar > div:is(.head, .body, .leg) {
+  background-color: #8a5846;
+}
+.container:has(#fur_brown:checked) .avatar > div:is(.head, .body, .leg) > div:is(.arm) {
+  background-color: #8a5846;
+}
+.container:has(#fur_brown:checked) .avatar > .head > .ear {
+  border-bottom-color: #8a5846;
+}
+
+.fur.brown {
+  background-color: #8a5846;
+}
+
+.container:has(#fur_gray:checked) label[for=fur_gray] {
+  background-color: #fed235;
+}
+.container:has(#fur_gray:checked) .avatar > div:is(.head, .body, .leg) {
+  background-color: #c2c2c2;
+}
+.container:has(#fur_gray:checked) .avatar > div:is(.head, .body, .leg) > div:is(.arm) {
+  background-color: #c2c2c2;
+}
+.container:has(#fur_gray:checked) .avatar > .head > .ear {
+  border-bottom-color: #c2c2c2;
+}
+
+.fur.gray {
+  background-color: #c2c2c2;
+}
+
+.container:has(#fur_blue:checked) label[for=fur_blue] {
+  background-color: #fed235;
+}
+.container:has(#fur_blue:checked) .avatar > div:is(.head, .body, .leg) {
+  background-color: #3c4259;
+}
+.container:has(#fur_blue:checked) .avatar > div:is(.head, .body, .leg) > div:is(.arm) {
+  background-color: #3c4259;
+}
+.container:has(#fur_blue:checked) .avatar > .head > .ear {
+  border-bottom-color: #3c4259;
+}
+
+.fur.blue {
+  background-color: #3c4259;
+}
+
+.hidden {
+  display: none;
+}
+
+@-webkit-keyframes idle {
+  0% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(0.2rem);
+  }
+  0% {
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes idle {
+  0% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(0.2rem);
+  }
+  0% {
+    transform: translateY(0rem);
+  }
+}
+@-webkit-keyframes arm-left-idle {
+  0% {
+    transform: rotate(65deg);
+  }
+  50% {
+    transform: rotate(75deg);
+  }
+  0% {
+    transform: rotate(65deg);
+  }
+}
+@keyframes arm-left-idle {
+  0% {
+    transform: rotate(65deg);
+  }
+  50% {
+    transform: rotate(75deg);
+  }
+  0% {
+    transform: rotate(65deg);
+  }
+}
+@-webkit-keyframes arm-right-idle {
+  0% {
+    transform: rotate(-65deg);
+  }
+  50% {
+    transform: rotate(-75deg);
+  }
+  0% {
+    transform: rotate(-65deg);
+  }
+}
+@keyframes arm-right-idle {
+  0% {
+    transform: rotate(-65deg);
+  }
+  50% {
+    transform: rotate(-75deg);
+  }
+  0% {
+    transform: rotate(-65deg);
+  }
+}
+@media screen and (width >= 512px) {
+  .logo-text {
+    display: inline-block;
+  }
+
+  .avatar-frame {
+    width: 16rem;
+  }
+
+  .avatar-container {
+    flex-direction: row;
+  }
+
+  .avatar-frame {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3) inset;
+  }
+
+  .buttons-container {
+    padding-top: 0;
+  }
+
+  .selection-container {
+    margin-top: 1.25rem;
+  }
+
+  .selection-link-text {
+    display: block;
+  }
+}
+@media screen and (width >= 768px) {
+  .container {
+    max-width: 960px;
+    margin: auto;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .avatar-container {
+    flex-direction: column;
+  }
+
+  .buttons-container {
+    padding-top: 1.25rem;
+  }
+
+  .selection-container {
+    margin-top: 0;
+  }
+
+  .selection-list {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .selection {
+    min-width: 512px;
+  }
+}
+@media screen and (width >= 960px) {
+  .buttons-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
